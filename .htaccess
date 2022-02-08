@@ -1,0 +1,9 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+RewriteRule ^connexion$ /CONNEXION/connexion.php [L]
+RewriteRule ^inscription$ /CONNEXION/inscription.php [L]
+RewriteRule ^deconnexion$ /CONNEXION/deconnexion.php [L]
+RewriteRule ^profile$ /CONNEXION/profile.php [L]

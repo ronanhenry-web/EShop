@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    width: 100%;
+    background: #E5E7EB;
+    position: relative;
+    display: flex;
+}
+
+/* Menu à gauche */
+.grosTitre {
+    text-decoration: none;
+    color: white;
+}
+#menu {
+    background: #111827;
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+#menu .logo {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    padding: 30px 0 0 30px;
+}
+#menu .logo img {
+    width: 40px;
+    margin-right: 15px;
+}
+#menu .items {
+    margin-top: 40px;
+}
+#menu .items li {
+    list-style: none;
+    padding: 15px 0;
+    transition: 0.3s ease; 
+}
+#menu .items li:hover {
+    background: #253047;
+    cursor: pointer;
+}
+#menu .items li:nth-child(1) {
+    border-left: 4px solid #fff;
+}
+#menu .items li i {
+    color: rgb(134, 141, 151);
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+    margin: 0 10px 0 25px;
+}
+#menu .items li:hover i,
+#menu .items li:hover a {
+    color: #F3F4F6;
+}
+#menu .items li a {
+    text-decoration: none;
+    color: rgb(134, 141, 151);
+    font-weight: 300px;
+    transition: 0.3s ease;
+}
+
+/* Barre de recherche */
+#interface {
+    width: calc(100% - 300px);
+    margin-left: 300px;
+    position: relative;
+}
+#interface .navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 15px 30px;
+    border-bottom: 3px solid #594ef7;
+}
+#interface .navigation .search {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 14px;
+    border: 1px solid #d7dbe6;
+    border-radius: 4px;
+}
+#interface .navigation .search i {
+    margin-right: 14px;
+}
+#interface .navigation .search input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+#interface .navigation .profile {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+#interface .navigation .profile i {
+    margin-right: 20px;
+    font-size: 19px;
+    font-weight: 400;
+}
+#interface .navigation .profile img {
+    margin: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Stats */
+.i-name {
+    color: #444a53;
+    padding: 30px 30px 0 30px;
+    font-size: 24px;
+    font-weight: 700;
+}
+.values {
+    padding: 30px 30px 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.values .val-box {
+    background: #fff;
+    width: 235px;
+    padding: 16px 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.values .val-box i {
+    font-size: 25px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    margin-right: 15px;
+}
+.values .val-box:nth-child(1) i {
+    background: #7B74EC;
+}
+.values .val-box:nth-child(2) i {
+    background: #5C8AF0;
+}
+.values .val-box:nth-child(3) i {
+    background: #E45D99;
+}
+.values .val-box:nth-child(4) i {
+    background: #74daec;
+}
+.values .val-box h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+.values .val-box span {
+    font-size: 15px;
+    color: #828997;
+}
+
+/* View users */
+.board {
+    width: 94%;
+    margin: 30px 0 30px 30px;
+    overflow: auto;
+    background: #fff;
+    border-radius: 8px;
+}
+.board img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.board h5 {
+    font-weight: 600;
+    font-size: 14px;
+}
+.board p {
+    font-weight: 400;
+    font-size: 14px;
+    color: #787d8d;
+}
+.board .people {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: start;
+}
+table {
+    border-collapse: collapse;
+}
+tr {
+    border-bottom: 1px solid #eef0f3;
+}
+thead td {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 400;
+    background: #F9FAFB;
+    text-align: start;
+    padding: 15px;
+}
+thead tr td {
+    padding: 10px 15px;
+}
+.inscription p {
+    background: #d7fada;
+    padding: 3px 12px;
+    display: inline-block;
+    border-radius: 40px;
+    color: #2b2b2b;
+}
+
+/* removeArticle */
+.row {
+    align-items: center;
+}
+.main {
+    border: solid 1px #e6e6e6;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    padding-left: 25px;
+}
+
+.main .article {
+    width: 200px;
+}
+.main .article .id {
+    background: lightgreen;
+    text-align: center;
+}
+
+/* select addArticles */
+
+.container {
+    margin-left: 0px;
+}
+
+.box {
+    position: absolute;
+    left: 138px;
+    transform: translate(-50%, -50%);
+}
+.box select {
+    background-color: #253047;
+    color: white;
+    padding: 12px;
+    width: 250px;
+    border: none;
+    font-size: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+}
+.box::before {
+    content: "\f13a";
+    font-family: FontAwesome;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    font-size: 28px;
+    line-height: 45px;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+}
+.box:hover::before {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.box select option {
+    padding: 30px;
+}
+
+/* Bouton supression */
+.sup {
+    border: none;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    color: #eeeeee;
+    font-weight: 600;
+    font-size: 15px;
+    background-color: #920000;
+    padding: 15px 50px;
+    border-radius: 50px;
+}

@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+:root {
+    /*HEADER HEIGHT*/
+    --header-heigth: 5rem;
+    /*FONT-SIZE*/
+    --fsize-icones: 30px;
+    /*COLORS*/
+    --first-color: #ffffff;
+    --second-color: #333333;
+    --third-color: #ff5252;
+    --fourth-color: #f0f0f0;
+    --deconnexion-color: #db4b4b;
+    --deconnexion-color-hover: #e00000;
+}
+
+@media screen and (min-width: 1200px) {
+    :root {
+        --header-heigth: 6rem;
+    }
+}
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    outline: none;
+}
+
+body {
+    width: 100%;
+    height: var(--header-heigth);
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    background-image: linear-gradient(90deg, #eb8024, #ff00e7)
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.error__msg {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: var(--first-color);
+    padding: 15px 20px;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar {
+    width: 1em;
+    background: var(--second-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c7c7c7;
+    border-radius: 20px;
+}
+
+#Form-Connexion, #Form-Inscription {
+    width: 90%;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    background: var(--first-color);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+}
+
+#Form-Connexion h1, #Form-Inscription h1 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 3%;
+}
+
+#Form-Connexion p, #Form-Inscription p {
+    text-align: center;
+    font-size: 18px;
+}
+
+#Form-Connexion label, #Form-Inscription label,
+#Form-Connexion input[type="submit"], #Form-Inscription input[type="submit"] {
+    margin-top: 25px;
+}
+
+#Form-Connexion label input, #Form-Inscription label input, #Form-Inscription input[type="submit"],
+#Form-Connexion input[type="submit"] {
+    width: 100%;
+    height: 45px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#Form-Connexion label input, #Form-Inscription label input {
+    padding: 15px;
+    border: solid 1.5px var(--fourth-color);
+    border-radius: 5px;
+}
+
+#Form-Connexion input[type="submit"], #Form-Inscription input[type="submit"] {
+    text-transform: uppercase;
+    font-weight: 600;
+    background: #89217d;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    transition: all 100ms ease-in;
+    transform: scale(1);   
+}
+
+#Form-Connexion input[type="submit"]:focus, #Form-Inscription input[type="submit"]:active {
+    transition: all 100ms ease-in;
+    transform: scale(0.98);   
+}
+
+#Form-Connexion label[for="password"], #Form-Inscription label[for="password"] {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#Form-Connexion label[for="password"] input , #Form-Inscription label [for="password"] input {
+    width: calc(100% - 45px);
+    border-radius: 5px 0 0 5px;
+}
+
+#Form-Connexion label .eye__Pass, #Form-Inscription label .eye__Pass {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: var(--fourth-color);
+    color: var(--second-color);
+    border-radius: 0 5px 5px 0;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    user-select: none;
+}
+
+#Form-Connexion label .eye__Pass:hover, #Form-Inscription label .eye__Pass:hover {
+    background: #e2e2e2;
+}
+
+@media screen and (min-width: 768px) {
+    #Form-Connexion, #Form-Inscription {
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #Form-Connexion, #Form-Inscription {
+        width: 50%;
+        padding: 30px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #Form-Connexion {
+        width: 45%;
+        padding: 35px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #Form-Inscription {
+        width: 40%;
+        padding: 30px;
+        margin-top: 5%;
+    }
+}
+
+@media screen and (min-width: 576px) {}
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 992px) {}
+
+@media screen and (min-width: 1200px) {}
+
+.row {
+    width: 100%;
+}
+
+.row .value__container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.row .value__container p {
+    width: 30%;
+    color: var(--second-color);
+}
+
+.row .value__container input {
+    width: 60%;
+    padding: 10px;
+    border: solid 1.5px var(--fourth-color);
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    resize: none;
+}
+
+.row .value__container input[name="codePostal"] {
+    width: 10%;
+    margin-right: 20px;
+}
+
+.row .value__container input[name="ville"] {
+    width: calc(50% - 20px);
+}
+
+.row .value__container input[name="ville"] {
+    width: calc(50% - 20px);
+}
+
+.row .value__container input[name="nomAC"] {
+    width: calc(50% - 20px);
+}
+
+.row .value__container input[name="prenomAC"] {
+    width: 10%;
+    margin-right: 20px;
+}
+
+.row input {
+    width: calc(60% - 100px);
+    height: 40px;
+    border-radius: 5px 0px 0px 5px;
+    cursor: pointer;
+}
+
+.row input {
+    width: 10%;
+    align-items: center;
+    padding: 10px 20px;
+    background: var(--fourth-color);
+    color: var(--second-color);
+    border: none;
+    font-size: 15px;
+    border-radius: 30px;
+    user-select: none;
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+}
