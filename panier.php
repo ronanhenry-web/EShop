@@ -2,12 +2,66 @@
 include('INCLUDE/sessionStart.php');
 include('INCLUDE/authentification.php');
 ?>
+<?php
+if (isset($_GET['add'])) {
+    $number = $_GET['add'];
+    if (isset($_SESSION['admin'])) {
+        $user = $bdd->query('SELECT id FROM utilisateur WHERE mail="'.$_SESSION["admin"].'"');
+        $test = $user->fetch(PDO::FETCH_OBJ);
+    }
+    else {
+        $user = $bdd->query('SELECT id FROM utilisateur WHERE mail="'.$_SESSION["user"].'"');
+        $test = $user->fetch(PDO::FETCH_OBJ);
+    }
+    if (isset($test->id)) {
+        $add = $bdd->query('UPDATE panier SET quantity=quantity + 1 WHERE idUser='.$test->id.' AND idArticles='.$number.'');
+    }
+}
+
+if (isset($_GET['minus'])) {
+    $number = $_GET['minus'];
+    if (isset($_SESSION['admin'])) {
+        $user = $bdd->query('SELECT id FROM utilisateur WHERE mail="'.$_SESSION["admin"].'"');
+        $test = $user->fetch(PDO::FETCH_OBJ);
+    }
+    else {
+        $user = $bdd->query('SELECT id FROM utilisateur WHERE mail="'.$_SESSION["user"].'"');
+        $test = $user->fetch(PDO::FETCH_OBJ);
+    }
+    if (isset($test->id)) {
+        $quantity = $bdd->query('SELECT * FROM panier WHERE idUser='.$test->id.' AND idArticles='.$number.'');
+        $check_quantity = $quantity->fetch(PDO::FETCH_OBJ);
+        if($check_quantity->quantity == '1' || $check_quantity->quantity < '1') {
+            $remove = $bdd->query('DELETE FROM panier WHERE idUser='.$test->id.' AND idArticles='.$number.'');
+        }
+        else {
+            $remove = $bdd->query('UPDATE panier SET quantity=quantity - 1 WHERE idUser='.$test->id.' AND idArticles='.$number.'');
+        }
+    }
+}
+
+if (isset($_GET['delete'])) {
+    $number = $_GET['delete'];
+    if (isset($_SESSION['admin'])) {
+        $user = $bdd->query('SELECT id FROM utilisateur WHERE mail="'.$_SESSION["admin"].'"');
+        $test = $user->fetch(PDO::FETCH_OBJ);
+    }
+    else {
+        $user = $bdd->query('SELECT id FROM utilisateur WHERE mail="'.$_SESSION["user"].'"');
+        $test = $user->fetch(PDO::FETCH_OBJ);
+    }
+    if (isset($test->id)) {
+        $delete = $bdd->query('DELETE FROM panier WHERE idUser='.$test->id.' AND idArticles='.$number.'');
+    }
+}
+?>
 <html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="stylePanier.css">
-        <script src="https://kit.fontawesome.com/6ca76ec2b7.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="ADMIN/bootstrap-5.1.3-dist/css/bootstrap.min.css">
+        <script src="https://kit.fontawesome.com/207352b49e.js" crossorigin="anonymous"></script>
         <title>E-SHOP</title>
     </head>
 
@@ -58,7 +112,12 @@ include('INCLUDE/authentification.php');
                                 <p><?= $article->prix ?> €</p>
                             </td>
                             <td>
-                                <p><?= $article->quantity ?></p>
+                                <form action="panier" method="get">
+                                    <a href="?add=<?= $article->idArticles; ?>" class="btn btn-success qty"><i class="fa-solid fa-plus"></i></a>
+                                    <p class="btn btn-warning"><?= $article->quantity ?></p>
+                                    <a href="?minus=<?= $article->idArticles; ?>" class="btn btn-info qty"><i class="fa-solid fa-minus"></i></a>
+                                    <a href="?delete=<?= $article->idArticles; ?>" class="btn btn-danger qty"><i class="fas fa-trash"></i></a>
+                                </form>
                             </td>
                             <td>
                                 <p><?= $article->prix * $article->quantity?> €</p>
@@ -78,7 +137,6 @@ include('INCLUDE/authentification.php');
                     ?>
                 </tbody>
             </table>
-            
         </div>
     </body>
 </html>

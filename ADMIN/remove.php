@@ -27,7 +27,7 @@ if (isset($_GET['id'])) {
         <section id="menu">
             <div class="logo">
                 <img src="/IMG/admin.png" alt="">
-                <h2>Dashboard</h2>
+                <h2><a href="../index" class="grosTitre">Dashboard</a></h2>
             </div>
             <div class="items">
                 <li><i class="fas fa-users"></i><a href="./"> View Users</a></li>

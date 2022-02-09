@@ -65,6 +65,10 @@ thead tr td {
 tbody tr td {
     background: white;
     text-align: center;
+    border: solid 1px lightgrey;
+}
+tbody tr td .qty{
+    margin-bottom: 15px;
 }
 .totalArticles {
     margin-left: 70%;
