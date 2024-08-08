@@ -6,7 +6,7 @@ Faire un site E-commerce pour des vêtements avec un panel administrateur
 
 Le projet a été créé sous VSCode, pour le démarrer suivre les étapes suivantes.
 
-- Cloner le projet dans un serveur web comme WampServer lancer le projet
+- Cloner le projet dans un serveur web comme WampServer puis lancer le projet
 - Ajouter une BDD e-shop et configurer les tables
 
 ## Sources & Outils
