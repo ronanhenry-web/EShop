@@ -1,14 +1,14 @@
-# Projet EShop
+# EShop Project
 
-Faire un site E-commerce pour des vêtements avec un panel administrateur
+Building an E-commerce website for clothing with an admin panel
 
-## Démarrer
+## Getting Started
 
-Le projet a été créé sous VSCode, pour le démarrer suivre les étapes suivantes.
+The project was created using VSCode. To get it running, follow these steps :
 
-- Cloner le projet dans un serveur web comme WampServer (dossier www) puis lancer le projet sous le localhost de Wamp
-- Ajouter une BDD e-shop et configurer les tables
+- Clone the project into a web server like WampServer (www folder), then run the project under the localhost of Wamp
+- Create an "e-shop" database and configure the necessary tables
 
-## Sources & Outils
+## Sources & Tools
 
 <a href="https://www.php.net" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="php" width="40" height="40"/> </a>
